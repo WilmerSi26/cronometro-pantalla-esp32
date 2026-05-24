@@ -33,6 +33,7 @@ const int TOUCH_OFFSET_Y = 18;
 
 const int MINPRESSURE = 20;
 const int MAXPRESSURE = 1000;
+const unsigned int TIMER_UPDATE_MS = 100;
 
 const int START_X = 20;
 const int START_Y = 208;
@@ -51,7 +52,7 @@ bool running = false;
 unsigned long startedAtMs = 0;
 unsigned long accumulatedMs = 0;
 unsigned long lastDrawMs = 0;
-unsigned long lastDisplayedCentiseconds = 999999;
+unsigned long lastDisplayedDeciseconds = 999999;
 unsigned long lastTouchActionMs = 0;
 
 void restoreTftPins() {
@@ -155,23 +156,22 @@ void drawStaticUi() {
 
 void drawTimer(bool force = false) {
   unsigned long now = millis();
-  unsigned long currentCentiseconds = elapsedMs() / 10;
+  unsigned long currentDeciseconds = elapsedMs() / TIMER_UPDATE_MS;
 
-  if (!force && currentCentiseconds == lastDisplayedCentiseconds) {
+  if (!force && currentDeciseconds == lastDisplayedDeciseconds) {
     return;
   }
 
-  if (!force && (now - lastDrawMs) < 35) {
+  if (!force && (now - lastDrawMs) < TIMER_UPDATE_MS) {
     return;
   }
 
   lastDrawMs = now;
-  lastDisplayedCentiseconds = currentCentiseconds;
+  lastDisplayedDeciseconds = currentDeciseconds;
 
   char text[12];
-  formatElapsed(elapsedMs(), text, sizeof(text));
+  formatElapsed(currentDeciseconds * TIMER_UPDATE_MS, text, sizeof(text));
 
-  tft.fillRect(0, 66, tft.width(), 70, BLACK);
   tft.setTextColor(GREEN, BLACK);
   tft.setTextSize(4);
   tft.setCursor(24, 88);
@@ -192,7 +192,7 @@ void resetTimer() {
   running = false;
   startedAtMs = 0;
   accumulatedMs = 0;
-  lastDisplayedCentiseconds = 999999;
+  lastDisplayedDeciseconds = 999999;
 }
 
 void setup() {
