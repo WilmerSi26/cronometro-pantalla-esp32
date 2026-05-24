@@ -57,6 +57,15 @@ INVERT_Y = true
 
 Si al probar queda corregido, no cambies nada. Si queda bien arriba/abajo pero mal izquierda/derecha, cambia solo `INVERT_X`. Si queda bien izquierda/derecha pero mal arriba/abajo, cambia solo `INVERT_Y`.
 
+Ademas se agrego una correccion fina porque el punto salia un poco a la derecha y arriba:
+
+```cpp
+TOUCH_OFFSET_X = -18
+TOUCH_OFFSET_Y = 18
+```
+
+Si el punto sigue saliendo a la derecha, haz `TOUCH_OFFSET_X` mas negativo. Si sale a la izquierda, hazlo menos negativo o positivo. Si sale arriba, sube `TOUCH_OFFSET_Y`; si sale abajo, baja `TOUCH_OFFSET_Y`.
+
 ## Sobre pantalla blanca durante la carga
 
 Si al subir un programa aparece `programmer is not responding` o `not in sync`, el codigo nuevo no se cargo. El Arduino se reinicia, corre el programa anterior y por eso la pantalla puede ponerse blanca y redibujarse.
