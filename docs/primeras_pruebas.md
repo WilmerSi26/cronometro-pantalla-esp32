@@ -20,7 +20,17 @@ Arduino_GFX *gfx = new Arduino_HX8347D(bus, TFT_RST, 1, false);
 
 Compila de nuevo despues de cada cambio.
 
-## 2. Compilar
+## 2. Cargar con Arduino IDE
+
+Abre:
+
+```text
+arduino/cronometro_pantalla_esp32/cronometro_pantalla_esp32.ino
+```
+
+Luego sigue `docs/arduino_ide.md`.
+
+## 3. Compilar con PlatformIO
 
 En VS Code con PlatformIO:
 
@@ -28,7 +38,7 @@ En VS Code con PlatformIO:
 pio run
 ```
 
-## 3. Subir al ESP32
+## 4. Subir al ESP32 con PlatformIO
 
 ```powershell
 pio run --target upload
@@ -36,7 +46,7 @@ pio run --target upload
 
 Si el ESP32 no entra en modo carga, manten presionado `BOOT` cuando empiece la subida y sueltalo cuando aparezca `Writing`.
 
-## 4. Monitor serial
+## 5. Monitor serial
 
 ```powershell
 pio device monitor
@@ -44,7 +54,7 @@ pio device monitor
 
 Velocidad: `115200`.
 
-## 5. Problemas comunes
+## 6. Problemas comunes
 
 | Sintoma | Posible causa | Que revisar |
 |---|---|---|
@@ -54,7 +64,7 @@ Velocidad: `115200`.
 | Se reinicia el ESP32 | Corto o exceso de consumo | Revisar alimentacion y cables |
 | Boton inestable | Falta pull-up | Agregar resistencia de 10 kOhm a `3V3` |
 
-## 6. Siguiente mejora
+## 7. Siguiente mejora
 
 Cuando el cronometro funcione, las siguientes mejoras naturales son:
 

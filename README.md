@@ -16,10 +16,14 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 
 ```text
 .
+|-- arduino/
+|   `-- cronometro_pantalla_esp32/
+|       `-- cronometro_pantalla_esp32.ino
 |-- platformio.ini
 |-- src/
 |   `-- main.cpp
 |-- docs/
+|   |-- arduino_ide.md
 |   |-- conexion_pantalla_esp32.md
 |   |-- primeras_pruebas.md
 |   `-- github.md
@@ -29,13 +33,24 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 
 ## Software recomendado
 
+### Opcion A: Arduino IDE
+
+1. Instala Arduino IDE.
+2. Instala el soporte ESP32.
+3. Instala la libreria `GFX Library for Arduino`.
+4. Abre `arduino/cronometro_pantalla_esp32/cronometro_pantalla_esp32.ino`.
+5. Selecciona `ESP32 Dev Module`.
+6. Compila y sube.
+
+La guia paso a paso esta en `docs/arduino_ide.md`.
+
+### Opcion B: PlatformIO
+
 1. Instala VS Code.
 2. Instala la extension PlatformIO IDE.
 3. Abre esta carpeta como proyecto.
 4. Conecta el ESP32 por USB.
 5. Compila y sube con PlatformIO.
-
-Tambien puedes adaptar `src/main.cpp` a Arduino IDE, pero PlatformIO instala la libreria desde `platformio.ini` de forma mas ordenada.
 
 ## Libreria de pantalla
 
