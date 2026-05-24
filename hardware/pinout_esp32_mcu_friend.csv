@@ -1,0 +1,19 @@
+pantalla,esp32,codigo,nota
+LCD_RST,GPIO4,TFT_RST,Reset del controlador TFT
+LCD_CS,GPIO26,TFT_CS,Chip select
+LCD_RS,GPIO27,TFT_DC,Data/Command tambien llamado RS
+LCD_WR,GPIO32,TFT_WR,Write strobe
+LCD_RD,GPIO33,TFT_RD,Read strobe
+LCD_D0,GPIO16,TFT_D0,Bus paralelo bit 0
+LCD_D1,GPIO17,TFT_D1,Bus paralelo bit 1
+LCD_D2,GPIO18,TFT_D2,Bus paralelo bit 2
+LCD_D3,GPIO19,TFT_D3,Bus paralelo bit 3
+LCD_D4,GPIO21,TFT_D4,Bus paralelo bit 4
+LCD_D5,GPIO22,TFT_D5,Bus paralelo bit 5
+LCD_D6,GPIO23,TFT_D6,Bus paralelo bit 6
+LCD_D7,GPIO25,TFT_D7,Bus paralelo bit 7
+GND,GND,,Tierra comun
+3V3,3V3,,Primera prueba recomendada
+5V,5V/VIN,,Usar solo si el shield lo requiere
+BOTON_START_STOP,GPIO13,BTN_START_STOP,Boton entre GPIO y GND
+BOTON_RESET,GPIO14,BTN_RESET,Boton entre GPIO y GND
