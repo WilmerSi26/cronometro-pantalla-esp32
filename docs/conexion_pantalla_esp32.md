@@ -20,7 +20,7 @@ No conectes senales de 5V a ningun GPIO del ESP32. El ESP32 trabaja a 3.3 V.
 | `LCD_CS` | GPIO26 | `TFT_CS` |
 | `LCD_RS` | GPIO27 | `TFT_DC` |
 | `LCD_WR` | GPIO32 | `TFT_WR` |
-| `LCD_RD` | GPIO33 | `TFT_RD` |
+| `LCD_RD` | 3V3 | Lectura desactivada |
 | `LCD_D0` | GPIO16 | `TFT_D0` |
 | `LCD_D1` | GPIO17 | `TFT_D1` |
 | `LCD_D2` | GPIO18 | `TFT_D2` |
@@ -51,3 +51,5 @@ La pantalla trae pines `SD_SS`, `SD_DI`, `SD_DO` y `SD_SCK`. No los conectes en 
 2. Sube el firmware.
 3. Si aparece el cronometro, agrega los botones.
 4. Si la pantalla queda blanca, revisa controlador y cableado.
+
+Para esta pantalla, Arduino UNO detecto `0x9328` y funciono con inicializacion `0x9325`. La prueba ESP32 recomendada esta en `docs/esp32_pantalla_id9325.md`.
