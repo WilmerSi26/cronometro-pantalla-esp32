@@ -48,6 +48,15 @@ TS_BOT = 904
 
 Si tocas un boton y responde en otra zona, hay que ajustar esos cuatro valores `TS_*`.
 
+En tu pantalla el touch quedo invertido en ambos ejes, por eso los sketches usan:
+
+```cpp
+INVERT_X = true
+INVERT_Y = true
+```
+
+Si al probar queda corregido, no cambies nada. Si queda bien arriba/abajo pero mal izquierda/derecha, cambia solo `INVERT_X`. Si queda bien izquierda/derecha pero mal arriba/abajo, cambia solo `INVERT_Y`.
+
 ## Sobre pantalla blanca durante la carga
 
 Si al subir un programa aparece `programmer is not responding` o `not in sync`, el codigo nuevo no se cargo. El Arduino se reinicia, corre el programa anterior y por eso la pantalla puede ponerse blanca y redibujarse.

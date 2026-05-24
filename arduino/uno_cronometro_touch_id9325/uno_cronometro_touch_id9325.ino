@@ -26,6 +26,9 @@ const int TS_RT = 103;
 const int TS_TOP = 96;
 const int TS_BOT = 904;
 
+const bool INVERT_X = true;
+const bool INVERT_Y = true;
+
 const int MINPRESSURE = 20;
 const int MAXPRESSURE = 1000;
 
@@ -68,6 +71,15 @@ bool readTouch(int &x, int &y) {
   y = map(p.y, TS_TOP, TS_BOT, 0, tft.height());
   x = constrain(x, 0, tft.width() - 1);
   y = constrain(y, 0, tft.height() - 1);
+
+  if (INVERT_X) {
+    x = tft.width() - 1 - x;
+  }
+
+  if (INVERT_Y) {
+    y = tft.height() - 1 - y;
+  }
+
   return true;
 }
 
