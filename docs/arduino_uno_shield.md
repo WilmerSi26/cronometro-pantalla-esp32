@@ -149,3 +149,20 @@ Este sketch va probando automaticamente:
 ```
 
 Si en algun momento aparece imagen, anota el `INIT 0x....` que se muestra arriba. Ese sera el ID que debemos usar en el cronometro.
+
+## Confirmado: funciona con 0x9325
+
+Como la prueba con `0x9325` funciono, usa este cronometro:
+
+```text
+arduino/uno_cronometro_id9325/uno_cronometro_id9325.ino
+```
+
+Los botones son:
+
+| Funcion | Pin |
+|---|---:|
+| Inicio / pausa | A5 |
+| Reinicio | D10 |
+
+Cada boton va entre el pin indicado y `GND`.
