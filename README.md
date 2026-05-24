@@ -23,6 +23,10 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 |   |   `-- uno_leer_id_tft.ino
 |   |-- uno_prueba_00_00_id9328/
 |   |   `-- uno_prueba_00_00_id9328.ino
+|   |-- uno_prueba_00_00_id9325/
+|   |   `-- uno_prueba_00_00_id9325.ino
+|   |-- uno_prueba_ids_compatibles/
+|   |   `-- uno_prueba_ids_compatibles.ino
 |   |-- uno_prueba_00_00_ili9341/
 |   |   `-- uno_prueba_00_00_ili9341.ino
 |   `-- cronometro_pantalla_esp32/

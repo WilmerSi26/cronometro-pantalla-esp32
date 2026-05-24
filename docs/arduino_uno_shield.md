@@ -112,3 +112,40 @@ tft.begin(0x9328);
 ```
 
 Si esta prueba funciona, los siguientes programas del cronometro para Arduino UNO deben usar tambien `tft.begin(0x9328)`.
+
+## Si 0x9328 sigue blanco
+
+La libreria `MCUFRIEND_kbv` incluida en el paquete no tiene una inicializacion directa para `0x9328`. Por eso puede leer el ID pero no dibujar.
+
+Prueba primero:
+
+```text
+arduino/uno_prueba_00_00_id9325/uno_prueba_00_00_id9325.ino
+```
+
+Esta version usa:
+
+```cpp
+tft.begin(0x9325);
+```
+
+Muchos controladores de la familia `ILI932x` responden a una inicializacion compatible con `ILI9325`.
+
+Si todavia queda blanco, carga:
+
+```text
+arduino/uno_prueba_ids_compatibles/uno_prueba_ids_compatibles.ino
+```
+
+Este sketch va probando automaticamente:
+
+```text
+0x9325
+0x9320
+0x9329
+0x9341
+0x9486
+0x9488
+```
+
+Si en algun momento aparece imagen, anota el `INIT 0x....` que se muestra arriba. Ese sera el ID que debemos usar en el cronometro.
