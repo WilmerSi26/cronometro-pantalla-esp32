@@ -31,6 +31,10 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 |   |   `-- uno_prueba_00_00_ili9341.ino
 |   |-- uno_cronometro_id9325/
 |   |   `-- uno_cronometro_id9325.ino
+|   |-- uno_touch_test_id9325/
+|   |   `-- uno_touch_test_id9325.ino
+|   |-- uno_cronometro_touch_id9325/
+|   |   `-- uno_cronometro_touch_id9325.ino
 |   `-- cronometro_pantalla_esp32/
 |       `-- cronometro_pantalla_esp32.ino
 |-- platformio.ini
@@ -40,6 +44,7 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 |   |-- arduino_ide.md
 |   |-- arduino_uno_shield.md
 |   |-- cronometro_uno_id9325.md
+|   |-- cronometro_touch_uno_id9325.md
 |   |-- conexion_pantalla_esp32.md
 |   |-- pantalla_blanca.md
 |   |-- primeras_pruebas.md
