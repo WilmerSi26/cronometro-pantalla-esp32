@@ -90,3 +90,25 @@ tft.begin(0x9341);
 ```
 
 por el ID que salio en el Monitor Serie.
+
+## Caso detectado: ID 0x9328
+
+Tu pantalla respondio:
+
+```text
+ID detectado: 0x9328
+```
+
+Eso indica que no debes iniciar con `0x9341`. Usa este sketch:
+
+```text
+arduino/uno_prueba_00_00_id9328/uno_prueba_00_00_id9328.ino
+```
+
+La linea importante es:
+
+```cpp
+tft.begin(0x9328);
+```
+
+Si esta prueba funciona, los siguientes programas del cronometro para Arduino UNO deben usar tambien `tft.begin(0x9328)`.
