@@ -27,6 +27,7 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 |-- docs/
 |   |-- arduino_ide.md
 |   |-- conexion_pantalla_esp32.md
+|   |-- pantalla_blanca.md
 |   |-- primeras_pruebas.md
 |   |-- prueba_00_00.md
 |   `-- github.md

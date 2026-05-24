@@ -6,7 +6,7 @@
 const int TFT_CS = 26;   // LCD_CS
 const int TFT_DC = 27;   // LCD_RS / DC
 const int TFT_WR = 32;   // LCD_WR
-const int TFT_RD = 33;   // LCD_RD
+const int TFT_RD = GFX_NOT_DEFINED; // LCD_RD debe ir fisicamente a 3V3
 const int TFT_RST = 4;   // LCD_RST
 
 const int TFT_D0 = 16;
@@ -28,10 +28,26 @@ Arduino_DataBus *bus = new Arduino_ESP32PAR8(
 );
 
 // Si la pantalla queda blanca, prueba Arduino_ILI9486 o Arduino_ILI9488.
-Arduino_GFX *gfx = new Arduino_ILI9341(bus, TFT_RST, 1, false);
+Arduino_GFX *gfx = new Arduino_ILI9488(bus, TFT_RST, 1, false);
 
 void setup() {
   Serial.begin(115200);
+
+  pinMode(TFT_RST, OUTPUT);
+  pinMode(TFT_CS, OUTPUT);
+  pinMode(TFT_DC, OUTPUT);
+  pinMode(TFT_WR, OUTPUT);
+
+  digitalWrite(TFT_RST, HIGH);
+  digitalWrite(TFT_CS, HIGH);
+  digitalWrite(TFT_DC, HIGH);
+  digitalWrite(TFT_WR, HIGH);
+
+  delay(50);
+  digitalWrite(TFT_RST, LOW);
+  delay(50);
+  digitalWrite(TFT_RST, HIGH);
+  delay(150);
 
   if (!gfx->begin()) {
     Serial.println("No se pudo iniciar la pantalla.");
