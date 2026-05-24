@@ -17,6 +17,8 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 ```text
 .
 |-- arduino/
+|   |-- prueba_00_00_esp32/
+|   |   `-- prueba_00_00_esp32.ino
 |   `-- cronometro_pantalla_esp32/
 |       `-- cronometro_pantalla_esp32.ino
 |-- platformio.ini
@@ -26,6 +28,7 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 |   |-- arduino_ide.md
 |   |-- conexion_pantalla_esp32.md
 |   |-- primeras_pruebas.md
+|   |-- prueba_00_00.md
 |   `-- github.md
 `-- hardware/
     `-- pinout_esp32_mcu_friend.csv
@@ -38,9 +41,10 @@ La pantalla de las fotos tiene pines como `LCD_RST`, `LCD_CS`, `LCD_RS`, `LCD_WR
 1. Instala Arduino IDE.
 2. Instala el soporte ESP32.
 3. Instala la libreria `GFX Library for Arduino`.
-4. Abre `arduino/cronometro_pantalla_esp32/cronometro_pantalla_esp32.ino`.
+4. Primero abre `arduino/prueba_00_00_esp32/prueba_00_00_esp32.ino`.
 5. Selecciona `ESP32 Dev Module`.
 6. Compila y sube.
+7. Si aparece `00:00`, prueba luego `arduino/cronometro_pantalla_esp32/cronometro_pantalla_esp32.ino`.
 
 La guia paso a paso esta en `docs/arduino_ide.md`.
 

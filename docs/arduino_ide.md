@@ -27,7 +27,17 @@ GFX Library for Arduino
 
 3. Instala la libreria de `moononournation`.
 
-## 3. Abrir el sketch
+## 3. Abrir primero la prueba 00:00
+
+Abre este archivo:
+
+```text
+arduino/prueba_00_00_esp32/prueba_00_00_esp32.ino
+```
+
+Esta version solo muestra `00:00`. Sirve para confirmar que el cableado y el controlador de pantalla funcionan.
+
+## 4. Abrir luego el cronometro completo
 
 Abre este archivo:
 
@@ -37,7 +47,7 @@ arduino/cronometro_pantalla_esp32/cronometro_pantalla_esp32.ino
 
 La carpeta y el archivo deben tener el mismo nombre. Arduino IDE lo necesita asi.
 
-## 4. Seleccionar placa
+## 5. Seleccionar placa
 
 En Arduino IDE selecciona:
 
@@ -55,7 +65,7 @@ Configuracion recomendada:
 | Flash Mode | QIO |
 | Partition Scheme | Default |
 
-## 5. Seleccionar puerto
+## 6. Seleccionar puerto
 
 Conecta el ESP32 por USB y selecciona:
 
@@ -65,7 +75,7 @@ Herramientas > Puerto
 
 Si no aparece el puerto, probablemente falta el driver USB del chip de tu placa, comunmente CH340 o CP210x.
 
-## 6. Subir
+## 7. Subir
 
 Presiona `Subir`.
 
@@ -75,7 +85,7 @@ Si aparece `Connecting...` y no avanza:
 2. Cuando Arduino IDE empiece a escribir, suelta `BOOT`.
 3. Si no reinicia solo, presiona `EN` o `RESET`.
 
-## 7. Si la pantalla no muestra imagen
+## 8. Si la pantalla no muestra imagen
 
 En el archivo `.ino`, busca esta linea:
 
@@ -93,7 +103,7 @@ Arduino_GFX *gfx = new Arduino_HX8347D(bus, TFT_RST, 1, false);
 
 Despues de cada cambio, vuelve a subir el programa.
 
-## 8. Botones
+## 9. Botones
 
 Los botones van conectados asi:
 
