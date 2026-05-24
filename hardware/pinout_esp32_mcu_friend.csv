@@ -3,9 +3,9 @@ LCD_RST,GPIO4,TFT_RST,Reset del controlador TFT
 LCD_CS,GPIO26,TFT_CS,Chip select
 LCD_RS,GPIO27,TFT_DC,Data/Command tambien llamado RS
 LCD_WR,GPIO32,TFT_WR,Write strobe
-LCD_RD,3V3,,Lectura desactivada para escribir solamente
-LCD_D0,GPIO16,TFT_D0,Bus paralelo bit 0
-LCD_D1,GPIO17,TFT_D1,Bus paralelo bit 1
+LCD_RD,GPIO33 o 3V3,TFT_RD,Lectura desactivada para escribir solamente
+LCD_D0,GPIO13,TFT_D0,Bus paralelo bit 0
+LCD_D1,GPIO14,TFT_D1,Bus paralelo bit 1
 LCD_D2,GPIO18,TFT_D2,Bus paralelo bit 2
 LCD_D3,GPIO19,TFT_D3,Bus paralelo bit 3
 LCD_D4,GPIO21,TFT_D4,Bus paralelo bit 4

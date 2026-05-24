@@ -8,16 +8,17 @@
 #define GREEN 0x07E0
 #define WHITE 0xFFFF
 #define RED   0xF800
+#define BLUE  0x001F
 
 const int TFT_CS = 26;   // LCD_CS
 const int TFT_RS = 27;   // LCD_RS / CD
 const int TFT_WR = 32;   // LCD_WR
+const int TFT_RD = 33;   // LCD_RD, tambien puede ir directo a 3V3
 const int TFT_RST = 4;   // LCD_RST
 
-// LCD_RD debe conectarse fisicamente a 3V3.
-
-const int TFT_D0 = 16;
-const int TFT_D1 = 17;
+// Evitamos GPIO16/GPIO17 porque algunos ESP32 los usan para memoria interna.
+const int TFT_D0 = 13;
+const int TFT_D1 = 14;
 const int TFT_D2 = 18;
 const int TFT_D3 = 19;
 const int TFT_D4 = 21;
@@ -93,6 +94,7 @@ public:
     pinMode(TFT_CS, OUTPUT);
     pinMode(TFT_RS, OUTPUT);
     pinMode(TFT_WR, OUTPUT);
+    pinMode(TFT_RD, OUTPUT);
     pinMode(TFT_RST, OUTPUT);
 
     for (int i = 0; i < 8; i++) {
@@ -102,6 +104,7 @@ public:
     digitalWrite(TFT_CS, HIGH);
     digitalWrite(TFT_RS, HIGH);
     digitalWrite(TFT_WR, HIGH);
+    digitalWrite(TFT_RD, HIGH);
 
     digitalWrite(TFT_RST, HIGH);
     delay(20);
@@ -172,8 +175,11 @@ private:
     for (int i = 0; i < 8; i++) {
       digitalWrite(DATA_PINS[i], (value >> i) & 0x01);
     }
+    delayMicroseconds(1);
     digitalWrite(TFT_WR, LOW);
+    delayMicroseconds(2);
     digitalWrite(TFT_WR, HIGH);
+    delayMicroseconds(1);
   }
 
   void write16(uint16_t value) {
@@ -214,9 +220,15 @@ void setup() {
   delay(500);
 
   Serial.println("ESP32 + TFT ILI9325 paralelo 8-bit");
-  Serial.println("Recuerda: LCD_RD va fijo a 3V3");
+  Serial.println("LCD_RD puede ir a GPIO33 o fijo a 3V3");
 
   tft.begin();
+  tft.fillScreen(RED);
+  delay(400);
+  tft.fillScreen(GREEN);
+  delay(400);
+  tft.fillScreen(BLUE);
+  delay(400);
   tft.fillScreen(BLACK);
   tft.drawRect(0, 0, tft.width(), tft.height(), RED);
 
